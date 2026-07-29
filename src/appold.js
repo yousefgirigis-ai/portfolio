@@ -151,7 +151,7 @@ const scaleIn = {
 const FULL_NAME = "Yousef Girgis";
 const ROLE = "Backend Developer";
 const PHONE = "01288898735";
-const EMAIL = "yousefgirgis@yahoo.com";
+const EMAIL = "yousefgirigis@gmail.com";
 const LINKEDIN = "https://www.linkedin.com/in/yousef-girgis-668293265/";
 
 // Education

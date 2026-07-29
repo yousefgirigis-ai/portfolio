@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaEnvelope, FaLinkedin, FaPhone } from "react-icons/fa";
+import { FaEnvelope, FaLinkedin, FaPhone, FaGlobe } from "react-icons/fa";
 
 const Icon = ({
   name,
@@ -221,10 +221,11 @@ const slideInFromRight = {
 
 // --- Data (unchanged) ---
 const FULL_NAME = "Yousef Girgis";
-const ROLE = "Backend Developer";
+const ROLE = "Full-Stack Developer";
 const PHONE = "01288898735";
-const EMAIL = "yousefgirgis@yahoo.com";
+const EMAIL = "yousefgirigis@gmail.com";
 const LINKEDIN = "https://www.linkedin.com/in/yousef-girgis-668293265/";
+const PORTFOLIO = "https://yousefgirgis.netlify.app";
 
 // Education
 const education = {
@@ -239,11 +240,6 @@ const education = {
 const certificates = [
   {
     title:
-      "Future University in Egypt (Affiliated with University of Cincinnati) — Bachelor of Computers and Information Technology, Major: Computer Science",
-    year: "2024",
-  },
-  {
-    title:
       "University of California, Santa Cruz – Programming Fundamentals (C for Everyone)",
     year: "2021",
   },
@@ -252,80 +248,68 @@ const certificates = [
     year: "2022",
   },
   {
-    title: "Next Company – Mobile App Development (Flutter Framework)",
-    year: "2022",
-  },
-  {
     title: "Udemy – Flutter & Dart: The Complete Guide",
     year: "2023",
   },
   {
-    title: "Bee Interactive – Backend Development (Node.js, Nest.js & FastAPI)",
-    year: "2023",
+    title: "Udemy – The Complete FastAPI Course",
+    year: "2024",
   },
   {
-    title: "Udemy – Deployment with Docker & Kubernetes [2025]",
+    title:
+      "Udemy – NestJS: Zero to Hero – Modern TypeScript Back-end Development",
     year: "2025",
+  },
+  {
+    title: "Udemy – Deployment with Docker & Kubernetes",
+    year: "2026",
   },
 ];
 
 // Experience
 const experiences = [
   {
-    company: "Next Company",
-    role: "Flutter Developer Trainee",
-    period: "2022",
+    company: "L'Oréal",
+    role: "Brandstorm Participant",
+    period: "Feb 2022 – Apr 2022",
     bullets: [
-      "Developed cross-platform mobile apps with Flutter & Dart",
-      "Integrated apps with RESTful APIs and Firebase services",
-      "Implemented state management and responsive UI components",
+      "Took part in workshops on branding, innovation, and business strategy",
     ],
   },
   {
-    company: "L'Oréal — Brandstorm",
-    role: "Technical Participant / Workshop",
-    period: "2022",
+    company: "Next Company",
+    role: "Flutter Developer Trainee",
+    period: "May 2023 – Aug 2023",
     bullets: [
-      "Collaborated in innovation workshops for digital transformation",
-      "Contributed technical insights for customer engagement platforms",
+      "Developed cross-platform mobile applications using Flutter and Dart",
+    ],
+  },
+  {
+    company: "Bee Interactive Group",
+    role: "Full-Stack Developer",
+    period: "Jan 2024 – Present",
+    bullets: [
+      "Built dynamic, responsive front-end applications, including CRM interfaces, using React",
+      "Transitioned into backend development, applying Node.js, NestJS, and FastAPI to build RESTful APIs following modular, scalable architecture patterns",
+      "Practiced authentication and access-control patterns (JWT, OAuth, RBAC) and API documentation with Swagger",
+    ],
+  },
+  {
+    company: "Bee Interactive Group",
+    role: "DevOps Skills — Docker · Kubernetes · cPanel",
+    period: "Jan 2025 – Present",
+    bullets: [
+      "Containerized and deployed full production projects with Docker, orchestrating them across Kubernetes clusters",
+      "Used Lens to manage, monitor, and troubleshoot cluster workloads and resources",
+      "Building hands-on experience with deployment workflows across containerized and cPanel-hosted environments",
     ],
   },
 
   {
-    company: "Bee Interactive Group",
-    role: "Backend Developer Trainee",
-    period: "2023",
-    bullets: [
-      "Built RESTful APIs with Node.js, NestJS, and FastAPI",
-      "Containerized applications with Docker and orchestrated with Kubernetes",
-      "Implemented JWT, OAuth 2.0 authentication and Role-Based Access Control",
-      "Optimized MongoDB/SQL databases, improving performance by 40%",
-      "Developed real-time systems with WebSocket for chat and notifications",
-      "Architected CRM with lead management and multi-role permissions",
-    ],
-  },
-  {
-    company: "Frontend Development",
-    role: "React.js Independent Study",
-    period: "2024",
-    bullets: [
-      "Learned React.js for building modern web applications",
-      "Mastered component-based architecture and state management",
-      "Practiced with React Hooks, Context API, and React Router",
-      "Built responsive UIs with Tailwind CSS and styled-components",
-      "Integrated React applications with RESTful APIs",
-      "Explored Next.js for server-side rendering and full-stack development",
-    ],
-  },
-  {
-    company: "DevOps Skills",
-    role: "Independent Study",
-    period: "2025",
-    bullets: [
-      "Learning Docker for containerization and application deployment",
-      "Studying Kubernetes for container orchestration and scaling",
-      "Exploring CI/CD pipelines and cloud infrastructure management",
-    ],
+    company: "El Hoda Trade & Supplies",
+    role: "Freelance Web Developer",
+    period: "Freelance",
+    bullets: ["Designed and developed the company's business website"],
   },
 ];
 
@@ -362,6 +346,8 @@ const skillCategories = [
     skills: [
       "MongoDB",
       "SQL Databases",
+      "Firebase",
+      "phpMyAdmin",
       "Database Design",
       "Query Optimization",
       "Data Modeling",
@@ -426,6 +412,7 @@ const skillCategories = [
 const backendProjects = [
   {
     id: "social-media",
+    category: "Independent & Academic Projects",
     title: "Social Media Application",
     tagline: "Feature-rich social networking backend",
     description:
@@ -441,6 +428,7 @@ const backendProjects = [
   },
   {
     id: "book-rental-node",
+    category: "Independent & Academic Projects",
     title: "Book Rental System (Node.js)",
     tagline: "Library system for renting and managing books",
     description:
@@ -451,6 +439,7 @@ const backendProjects = [
   },
   {
     id: "online-courses",
+    category: "Independent & Academic Projects",
     title: "Online Courses Platform",
     tagline: "E-learning backend powering course management",
     description:
@@ -466,6 +455,7 @@ const backendProjects = [
   },
   {
     id: "book-rental-fastapi",
+    category: "Independent & Academic Projects",
     title: "Book Rental System (FastAPI)",
     tagline: "Python-based book lending platform",
     description:
@@ -476,6 +466,7 @@ const backendProjects = [
   },
   {
     id: "medical-report",
+    category: "Independent & Academic Projects",
     title: "Medical Report System",
     tagline: "Secure healthcare reporting backend",
     description:
@@ -486,6 +477,7 @@ const backendProjects = [
   },
   {
     id: "realtime-chat",
+    category: "Independent & Academic Projects",
     title: "Realtime Chat App",
     tagline: "High-performance messaging backend",
     description:
@@ -501,6 +493,7 @@ const backendProjects = [
   },
   {
     id: "food-africa",
+    category: "Client Projects — Bee Interactive Group",
     title: "Food Africa Marketplace",
     tagline: "Ordering and vendor management backend",
     description:
@@ -514,23 +507,10 @@ const backendProjects = [
     ],
     link: "#",
   },
-  {
-    id: "crm",
-    title: "Enterprise CRM System",
-    tagline: "Full-stack CRM for managing clients and teams",
-    description:
-      "Engineered a multi-tenant CRM solution with RBAC, analytics, notifications, and customer pipelines.",
-    tech: "NestJS, Node.js, MongoDB, JWT, ReactJS",
-    features: [
-      "RBAC Access Control",
-      "Analytics Dashboard",
-      "Customer Pipelines",
-      "Notifications",
-    ],
-    link: "#",
-  },
+
   {
     id: "real-estate-imkan",
+    category: "Client Projects — Bee Interactive Group",
     title: "Imkan Real Estate",
     tagline: "Real estate management platform backend",
     description:
@@ -544,7 +524,208 @@ const backendProjects = [
     ],
     link: "#",
   },
+  {
+    id: "orange-money",
+    category: "Client Projects — Bee Interactive Group",
+    title: "Orange Money",
+    tagline: "Mobile-money platform",
+    description:
+      "Contributed across the stack on a mobile-money platform, covering backend services, the customer-facing frontend, an admin dashboard, and the landing page.",
+    tech: "Node.js, NestJS, React, MongoDB",
+    features: ["Backend Services", "Admin Dashboard", "Landing Page"],
+    link: "#",
+  },
+
+  {
+    id: "real-estate-collection",
+    category: "Client Projects — Bee Interactive Group",
+    title: "Real Estate Collection",
+    tagline: "API and dashboard for property/collections management",
+    description:
+      "Developed the API and dashboard for managing property listings and collections for a real estate client.",
+    tech: "Node.js, NestJS, React, MongoDB",
+    features: ["Property Collections", "Admin Dashboard", "REST API"],
+    link: "#",
+  },
+  {
+    id: "epsilon-listener",
+    category: "Client Projects — Bee Interactive Group",
+    title: "Epsilon Listener (EMS)",
+    tagline: "Social-media monitoring platform",
+    description:
+      "Built backend services, dashboards, an AI agent, an insights module, and Facebook/Instagram scraper services for a social-media monitoring platform.",
+    tech: "NestJS, React, MongoDB, AI Agent",
+    features: [
+      "Dashboards",
+      "AI Agent",
+      "Insights Module",
+      "Social Scraper Services",
+    ],
+    link: "#",
+  },
+  {
+    id: "boat-cruise",
+    category: "Client Projects — Bee Interactive Group",
+    title: "Boat Cruise — El Karnak (EgyptAir)",
+    tagline: "Core module of the El Karnak platform, built for EgyptAir",
+    description:
+      "Delivered the backend, admin dashboard, and customer-facing web application for Boat Cruise, a key booking module within El Karnak — a large-scale travel platform built for EgyptAir.",
+    tech: "Node.js, React, MongoDB",
+    features: [
+      "EgyptAir Client Project",
+      "Booking Backend",
+      "Admin Dashboard",
+      "Customer Web App",
+    ],
+    link: "#",
+  },
+  {
+    id: "lc-booking-cycle",
+    category: "Client Projects — Bee Interactive Group",
+    title: "LC Booking Cycle — El Karnak (EgyptAir)",
+    tagline: "Booking-cycle engine within the El Karnak platform",
+    description:
+      "Built the backend and frontend for the LC Booking Cycle system, managing the end-to-end booking workflow as part of El Karnak, a major travel platform delivered for EgyptAir.",
+    tech: "Node.js, React, MongoDB",
+    features: [
+      "EgyptAir Client Project",
+      "Booking Workflow",
+      "Backend API",
+      "Frontend UI",
+    ],
+    link: "#",
+  },
+  {
+    id: "crm-solution",
+    category: "Client Projects — Bee Interactive Group",
+    title: "CRM Solution",
+    tagline: "Backend and dashboard",
+    description:
+      "Developed the backend and admin dashboard for a client relationship management solution.",
+    tech: "NestJS, React, MongoDB, JWT",
+    features: ["Backend API", "Admin Dashboard", "RBAC"],
+    link: "#",
+  },
+  {
+    id: "ra2yee",
+    category: "Client Projects — Bee Interactive Group",
+    title: "Ra2yee",
+    tagline: "Server-side and dashboard",
+    description:
+      "Built the server-side services and admin dashboard for the Ra2yee platform.",
+    tech: "Node.js, React, MongoDB",
+    features: ["Server-Side API", "Admin Dashboard"],
+    link: "#",
+  },
+
+  {
+    id: "el-hoda-trade",
+    category: "Freelance Projects",
+    title: "El Hoda Trade & Supplies",
+    tagline: "Business website — freelance",
+    description:
+      "Designed and developed the company's business website as a freelance web developer.",
+    tech: "HTML, CSS, JavaScript",
+    features: ["Business Website", "Freelance Delivery"],
+    link: "#",
+  },
+  {
+    id: "storytelling-app",
+    category: "Flagship & Mobile Projects",
+    title: "Storytelling App (Graduation Project)",
+    tagline: "Chatbot-driven mobile storytelling app",
+    description:
+      "Led a team to build a dynamic storytelling mobile app with a chatbot-driven, user-friendly reading experience, using Firebase and ML-based story recommendations.",
+    tech: "Flutter, Firebase, Machine Learning",
+    features: [
+      "Chatbot-Driven Reading",
+      "Personalized Recommendations",
+      "Firebase Auth & Storage",
+    ],
+    link: "#",
+  },
+  {
+    id: "expense-tracker",
+    category: "Flagship & Mobile Projects",
+    title: "Expense Tracker",
+    tagline: "Personal finance tracking app",
+    description: "Built a mobile app for tracking personal expenses.",
+    tech: "Flutter, Dart",
+    features: ["Expense Logging", "Spending Overview"],
+    link: "#",
+  },
+  {
+    id: "chatbot-app",
+    category: "Flagship & Mobile Projects",
+    title: "Chatbot App",
+    tagline: "Conversational mobile app",
+    description: "Built a chatbot-driven mobile application.",
+    tech: "Flutter, Dart",
+    features: ["Conversational UI", "Chat Flows"],
+    link: "#",
+  },
+  {
+    id: "chat-server",
+    category: "Flagship & Mobile Projects",
+    title: "Chat Server",
+    tagline: "Backend chat server",
+    description: "Built a chat server for real-time messaging.",
+    tech: "Dart",
+    features: ["Realtime Messaging"],
+    link: "#",
+  },
+  {
+    id: "quiz-app",
+    category: "Flagship & Mobile Projects",
+    title: "Quiz App",
+    tagline: "Mobile quiz application",
+    description: "Built a quiz app with scoring and multiple question sets.",
+    tech: "Flutter, Dart",
+    features: ["Scoring", "Multiple Categories"],
+    link: "#",
+  },
+  {
+    id: "taih",
+    category: "Flagship & Mobile Projects",
+    title: "Taih",
+    tagline: "Metro station navigation app",
+    description:
+      "Built a navigation app to help users find their way through metro stations.",
+    tech: "Dart",
+    features: ["Station Navigation", "Route Guidance"],
+    link: "#",
+  },
+  {
+    id: "line-follower-car",
+    category: "Flagship & Mobile Projects",
+    title: "Line Follower Car",
+    tagline: "Embedded systems project",
+    description: "Built an embedded-systems line-following car project.",
+    tech: "Embedded Systems",
+    features: ["Sensor-Based Navigation"],
+    link: "#",
+  },
 ];
+
+const PROJECT_CATEGORY_ORDER = [
+  "Client Projects — Bee Interactive Group",
+  "Freelance Projects",
+  "Flagship & Mobile Projects",
+  "Independent & Academic Projects",
+];
+
+const groupProjectsByCategory = (projects) => {
+  const groups = {};
+  projects.forEach((p) => {
+    const key = p.category || "Other";
+    if (!groups[key]) groups[key] = [];
+    groups[key].push(p);
+  });
+  return PROJECT_CATEGORY_ORDER.filter((cat) => groups[cat]).map((cat) => ({
+    category: cat,
+    items: groups[cat],
+  }));
+};
 
 const SectionTitle = ({ iconName, title, subtitle = "" }) => (
   <motion.div
@@ -554,34 +735,28 @@ const SectionTitle = ({ iconName, title, subtitle = "" }) => (
     variants={fadeInUp}
     className="mb-12"
   >
+    {subtitle && (
+      <p className="text-xs uppercase tracking-[0.2em] text-cyan-400/70 font-semibold mb-3">
+        {subtitle}
+      </p>
+    )}
     <div className="flex items-center gap-4 mb-4">
-      <div className="relative">
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 blur-xl opacity-20 rounded-full"
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ duration: 3, repeat: Infinity }}
-        />
+      <div className="relative shrink-0">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 blur-lg opacity-20 rounded-full" />
         <div className="relative flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-gray-900 to-black border border-gray-800 shadow-2xl">
           <Icon name={iconName} className="w-6 h-6 text-cyan-400" />
         </div>
       </div>
-      <div>
-        <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-cyan-100 to-white bg-clip-text text-transparent">
-          {title}
-        </h3>
-        {subtitle && (
-          <p className="text-sm text-gray-400 mt-2 font-light tracking-wide">
-            {subtitle}
-          </p>
-        )}
-      </div>
+      <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-cyan-100 to-white bg-clip-text text-transparent">
+        {title}
+      </h3>
     </div>
     <motion.div
-      className="h-0.5 w-32 bg-gradient-to-r from-blue-500/0 via-cyan-500 to-blue-500/0 rounded-full"
+      className="h-0.5 w-16 bg-gradient-to-r from-cyan-500 to-blue-500/0 rounded-full"
       initial={{ width: 0 }}
-      whileInView={{ width: 128 }}
+      whileInView={{ width: 64 }}
       viewport={{ once: true }}
-      transition={{ duration: 1, delay: 0.2 }}
+      transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
     />
   </motion.div>
 );
@@ -596,14 +771,13 @@ const Card = ({ children, className = "", hoverable = true, delay = 0 }) => (
     whileHover={
       hoverable
         ? {
-            y: -8,
-            scale: 1.02,
-            transition: { duration: 0.2 },
+            y: -4,
+            transition: { duration: 0.25, ease: "easeOut" },
           }
         : {}
     }
     className={`rounded-2xl p-6 border border-gray-800/50 bg-gradient-to-b from-gray-900/40 to-black/40 backdrop-blur-xl 
-      ${hoverable ? "hover:border-cyan-500/30 hover:shadow-2xl hover:shadow-cyan-900/20" : ""}
+      ${hoverable ? "hover:border-cyan-500/40 hover:shadow-xl hover:shadow-cyan-900/10" : ""}
       transition-all duration-300 ${className}`}
   >
     {children}
@@ -912,6 +1086,18 @@ export default function App() {
                   <FaPhone className="w-5 h-5" />
                   <span className="text-sm md:text-base">{PHONE}</span>
                 </motion.a>
+
+                <motion.a
+                  href={PORTFOLIO}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-gradient-to-r from-blue-900/20 to-cyan-900/20 border border-blue-800/30 hover:border-cyan-500/50 transition-all"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaGlobe className="w-5 h-5" />
+                  <span className="text-sm md:text-base">Portfolio</span>
+                </motion.a>
               </div>
             </motion.div>
 
@@ -929,10 +1115,11 @@ export default function App() {
                 <p className="text-gray-300 leading-relaxed mb-6">
                   I am a{" "}
                   <span className="text-cyan-300 font-semibold">
-                    Backend Developer
+                    Full-Stack Developer
                   </span>{" "}
-                  with expertise in building scalable, secure, and
-                  high-performance backend systems using modern technologies.
+                  comfortable across the whole stack — React on the front end,
+                  RESTful APIs with Node.js, NestJS, and FastAPI on the back
+                  end, plus cross-platform mobile apps with Flutter.
                 </p>
 
                 <div className="space-y-4">
@@ -978,11 +1165,11 @@ export default function App() {
                     <div className="text-xs text-gray-400 mt-1">GPA</div>
                   </div>
                   <div className="text-center p-4 rounded-lg bg-gradient-to-b from-purple-900/20 to-transparent border border-purple-800/30">
-                    <div className="text-2xl font-bold text-purple-300">2+</div>
+                    <div className="text-2xl font-bold text-purple-300">3+</div>
                     <div className="text-xs text-gray-400 mt-1">Years Exp</div>
                   </div>
                   <div className="text-center p-4 rounded-lg bg-gradient-to-b from-blue-900/20 to-transparent border border-blue-800/30">
-                    <div className="text-2xl font-bold text-cyan-300">10+</div>
+                    <div className="text-2xl font-bold text-cyan-300">60+</div>
                     <div className="text-xs text-gray-400 mt-1">Projects</div>
                   </div>
                 </div>
@@ -992,11 +1179,14 @@ export default function App() {
         </section>
 
         {/* ABOUT */}
-        <section id="about" className="py-16">
+        <section
+          id="about"
+          className="py-20 md:py-28 border-t border-gray-800/40"
+        >
           <SectionTitle
             iconName="Certificate"
             title="About Me"
-            subtitle="Passionate Backend Developer & Computer Science Graduate"
+            subtitle="Passionate Full-Stack Developer & Computer Science Graduate"
           />
 
           <motion.div
@@ -1043,7 +1233,10 @@ export default function App() {
         </section>
 
         {/* EDUCATION */}
-        <section id="education" className="py-16">
+        <section
+          id="education"
+          className="py-20 md:py-28 border-t border-gray-800/40"
+        >
           <SectionTitle iconName="Education" title="Education" />
 
           <motion.div
@@ -1086,7 +1279,10 @@ export default function App() {
         </section>
 
         {/* SKILLS */}
-        <section id="skills" className="py-16">
+        <section
+          id="skills"
+          className="py-20 md:py-28 border-t border-gray-800/40"
+        >
           <SectionTitle
             iconName="Skills"
             title="Technical Skills"
@@ -1123,7 +1319,10 @@ export default function App() {
         </section>
 
         {/* EXPERIENCE */}
-        <section id="experience" className="py-16">
+        <section
+          id="experience"
+          className="py-20 md:py-28 border-t border-gray-800/40"
+        >
           <SectionTitle
             iconName="Experience"
             title="Experience"
@@ -1190,79 +1389,112 @@ export default function App() {
         </section>
 
         {/* PROJECTS */}
-        <section id="projects" className="py-16">
+        <section
+          id="projects"
+          className="py-20 md:py-28 border-t border-gray-800/40"
+        >
           <SectionTitle
             iconName="Projects"
             title="Featured Projects"
-            subtitle="Backend Systems I've Built"
+            subtitle="Full-Stack Systems, Client Work & Mobile Apps I've Built"
           />
 
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {backendProjects.map((project, index) => (
-              <motion.div key={project.id} variants={fadeInUp}>
-                <Card delay={index * 0.1}>
-                  <div className="mb-4">
-                    <div className="flex items-start justify-between mb-3">
-                      <h4 className="text-xl font-bold text-white">
-                        {project.title}
-                      </h4>
-                      <div className="w-8 h-8 rounded-md bg-gradient-to-br from-cyan-600 to-blue-600 flex items-center justify-center">
-                        <Icon name="Projects" className="w-4 h-4 text-white" />
-                      </div>
-                    </div>
-                    <p className="text-sm text-cyan-300 mb-3">
-                      {project.tagline}
-                    </p>
-                    <p className="text-gray-400 text-sm leading-relaxed">
-                      {project.description}
-                    </p>
-                  </div>
+          <div className="space-y-16">
+            {groupProjectsByCategory(backendProjects).map((group) => (
+              <div key={group.category}>
+                <motion.div
+                  initial={{ opacity: 0, x: -12 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ duration: 0.5 }}
+                  className="flex items-center gap-3 mb-6"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                  <h4 className="text-sm font-semibold uppercase tracking-[0.15em] text-gray-300">
+                    {group.category}
+                  </h4>
+                  <span className="text-xs text-gray-500">
+                    {group.items.length} project
+                    {group.items.length > 1 ? "s" : ""}
+                  </span>
+                  <div className="flex-1 h-px bg-gray-800/60" />
+                </motion.div>
 
-                  <div className="mb-4">
-                    <div className="text-xs text-gray-500 mb-2">
-                      Technologies
-                    </div>
-                    <div className="flex flex-wrap gap-1">
-                      {project.tech.split(", ").map((tech) => (
-                        <span
-                          key={tech}
-                          className="text-xs px-2 py-1 rounded bg-blue-900/20 border border-blue-800/30"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+                <motion.div
+                  variants={staggerContainer}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true, margin: "-80px" }}
+                  className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
+                  {group.items.map((project, index) => (
+                    <motion.div key={project.id} variants={fadeInUp}>
+                      <Card delay={(index % 3) * 0.08}>
+                        <div className="mb-4">
+                          <div className="flex items-start justify-between mb-3">
+                            <h4 className="text-xl font-bold text-white">
+                              {project.title}
+                            </h4>
+                            <div className="w-8 h-8 rounded-md bg-gradient-to-br from-cyan-600 to-blue-600 flex items-center justify-center shrink-0 ml-3">
+                              <Icon
+                                name="Projects"
+                                className="w-4 h-4 text-white"
+                              />
+                            </div>
+                          </div>
+                          <p className="text-sm text-cyan-300 mb-3">
+                            {project.tagline}
+                          </p>
+                          <p className="text-gray-400 text-sm leading-relaxed">
+                            {project.description}
+                          </p>
+                        </div>
 
-                  <div>
-                    <div className="text-xs text-gray-500 mb-2">
-                      Key Features
-                    </div>
-                    <div className="flex flex-wrap gap-1">
-                      {project.features.map((feature) => (
-                        <span
-                          key={feature}
-                          className="text-xs px-2 py-1 rounded bg-cyan-900/20 border border-cyan-800/30"
-                        >
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </Card>
-              </motion.div>
+                        <div className="mb-4">
+                          <div className="text-xs text-gray-500 mb-2">
+                            Technologies
+                          </div>
+                          <div className="flex flex-wrap gap-1">
+                            {project.tech.split(", ").map((tech) => (
+                              <span
+                                key={tech}
+                                className="text-xs px-2 py-1 rounded bg-blue-900/20 border border-blue-800/30"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div>
+                          <div className="text-xs text-gray-500 mb-2">
+                            Key Features
+                          </div>
+                          <div className="flex flex-wrap gap-1">
+                            {project.features.map((feature) => (
+                              <span
+                                key={feature}
+                                className="text-xs px-2 py-1 rounded bg-cyan-900/20 border border-cyan-800/30"
+                              >
+                                {feature}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </section>
 
         {/* CERTIFICATES */}
-        <section id="certificates" className="py-16">
+        <section
+          id="certificates"
+          className="py-20 md:py-28 border-t border-gray-800/40"
+        >
           <SectionTitle
             iconName="Certificate"
             title="Certificates"
@@ -1304,7 +1536,10 @@ export default function App() {
         </section>
 
         {/* CONTACT */}
-        <section id="contact" className="py-20">
+        <section
+          id="contact"
+          className="py-20 md:py-28 border-t border-gray-800/40"
+        >
           <div className="max-w-4xl mx-auto text-center">
             <SectionTitle
               iconName="Email"
@@ -1424,7 +1659,7 @@ export default function App() {
                 {FULL_NAME}
               </div>
               <div className="text-sm text-gray-400">
-                © {new Date().getFullYear()} • Backend Developer & Computer
+                © {new Date().getFullYear()} • Full-Stack Developer & Computer
                 Science Graduate
               </div>
             </div>

@@ -1179,58 +1179,55 @@ export default function App() {
         </section>
 
         {/* ABOUT */}
-        <section
-          id="about"
-          className="py-20 md:py-28 border-t border-gray-800/40"
+    <section id="about" className="py-24 relative">
+      <div className="max-w-7xl mx-auto px-5 md:px-10">
+        <SectionHeader
+          eyebrow="Who I am"
+          title="About Me"
+          sub="I build reliable backend systems, polished interfaces, and production-ready deployments with a strong focus on scalability, security, and maintainable architecture."
+        />
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-60px" }}
+          className="max-w-5xl mx-auto"
         >
-          <SectionTitle
-            iconName="Certificate"
-            title="About Me"
-            subtitle="Passionate Full-Stack Developer & Computer Science Graduate"
-          />
-
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-          >
-            <Card delay={0.1}>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="text-xl font-bold mb-4 text-white">
-                    Background
-                  </h4>
-                  <p className="text-gray-300 leading-relaxed">
-                    I'm{" "}
-                    <span className="text-cyan-300 font-medium">
-                      {FULL_NAME}
-                    </span>
-                    , a Computer Science graduate from{" "}
-                    <span className="text-purple-300 font-medium">
-                      {education.school}
-                    </span>
-                    . With a passion for backend engineering, I specialize in
-                    creating robust APIs, designing scalable architectures, and
-                    implementing secure authentication systems.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold mb-4 text-white">
-                    Philosophy
-                  </h4>
-                  <p className="text-gray-300 leading-relaxed">
-                    I believe in writing clean, maintainable code and following
-                    best practices. My approach combines analytical thinking
-                    with creative problem-solving to deliver efficient and
-                    reliable backend solutions that power exceptional user
-                    experiences.
-                  </p>
-                </div>
+          <motion.div variants={fadeLeft}>
+            <GlassCard
+              className="p-7 h-full"
+              glow="from-indigo-600 to-violet-600"
+            >
+              <div className="flex items-center gap-3 mb-5">
+                <span className="text-2xl">👨‍💻</span>
+                <h3 className="text-xl font-bold text-white">Background</h3>
               </div>
-            </Card>
+              <p className="text-slate-400 leading-relaxed">
+                I'm <span className="text-white font-medium">{FULL_NAME}</span>,
+                a Computer Science graduate from{" "}
+                <span className="text-indigo-300 font-medium">
+                  {education.school}
+                </span>
+                . I build secure, scalable systems and enjoy working across the
+                full product lifecycle from API design to deployment.
+              </p>
+
+              <div className="mt-6 space-y-3">
+                {introPoints.map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-start gap-2 rounded-xl border border-white/10 bg-white/5 p-3"
+                  >
+                    <span className="mt-1 text-sm text-indigo-300">•</span>
+                    <p className="text-sm text-slate-300">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </GlassCard>
           </motion.div>
-        </section>
+        </motion.div>
+      </div>
+    </section>
 
         {/* EDUCATION */}
         <section
